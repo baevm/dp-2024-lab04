@@ -12,14 +12,14 @@ public class ClockAdapterTest
 
         adapter.SetDateTime(dateTime);
 
-        Assert.Equal(2025, analogClock.GetYear());
-        Assert.Equal(11, analogClock.GetMonth());
-        Assert.Equal(4, analogClock.GetDay());
+        Assert.Equal(2025, analogClock.Year);
+        Assert.Equal(11, analogClock.Month);
+        Assert.Equal(4, analogClock.Day);
 
-        Assert.Equal(10 * 30, analogClock.GetHourAngle(), 1); // 10 hours = 300 degrees
-        Assert.Equal(30 * 6, analogClock.GetMinuteAngle(), 1); // 30 minutes = 180 degrees
-        Assert.Equal(15 * 6, analogClock.GetSecondAngle(), 1); // 15 seconds = 90 degrees
-        Assert.Equal(DayNightDivision.AM, analogClock.GetDayNightDivision());
+        Assert.Equal(10 * 30, analogClock.HourAngle, 1); // 10 hours = 300 degrees
+        Assert.Equal(30 * 6, analogClock.MinuteAngle, 1); // 30 minutes = 180 degrees
+        Assert.Equal(15 * 6, analogClock.SecondAngle, 1); // 15 seconds = 90 degrees
+        Assert.Equal(DayNightDivision.AM, analogClock.DayNightDivision);
     }
 
     [Theory]
@@ -34,6 +34,6 @@ public class ClockAdapterTest
 
         adapter.SetDateTime(dateTime);
 
-        Assert.Equal(expectedDivision, analogClock.GetDayNightDivision());
+        Assert.Equal(expectedDivision, analogClock.DayNightDivision);
     }
 }

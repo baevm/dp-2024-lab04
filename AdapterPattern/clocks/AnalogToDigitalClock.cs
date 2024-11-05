@@ -3,22 +3,22 @@ namespace AdapterPattern;
 
 public class AnalogToDigitalClock : IBaseDigitalClock
 {
-    private readonly IBaseAnalogClock _analogClock;
+    private readonly AnalogClock _analogClock;
 
-    public AnalogToDigitalClock(IBaseAnalogClock analogClock)
+    public AnalogToDigitalClock(AnalogClock analogClock)
     {
         _analogClock = analogClock;
     }
 
     public DateTime GetDateTime()
     {
-        var year = _analogClock.GetYear();
-        var month = _analogClock.GetMonth();
-        var day = _analogClock.GetDay();
+        var year = _analogClock.Year;
+        var month = _analogClock.Month;
+        var day = _analogClock.Day;
 
-        var hourAngle = _analogClock.GetHourAngle();
-        var minuteAngle = _analogClock.GetMinuteAngle();
-        var secondAngle = _analogClock.GetSecondAngle();
+        var hourAngle = _analogClock.HourAngle;
+        var minuteAngle = _analogClock.MinuteAngle;
+        var secondAngle = _analogClock.SecondAngle;
 
         ConvertAnglesToTime(hourAngle, minuteAngle, secondAngle, out int hours, out int minutes, out int seconds);
 
