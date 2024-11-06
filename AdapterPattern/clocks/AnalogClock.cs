@@ -1,5 +1,8 @@
 namespace AdapterPattern;
 
+/// <summary>
+/// Класс аналоговых часов
+/// </summary>
 public class AnalogClock : IBaseAnalogClock
 {
     public int Year { get; private set; }
@@ -21,6 +24,16 @@ public class AnalogClock : IBaseAnalogClock
         DayNightDivision = DayNightDivision.AM;
     }
 
+    /// <summary>
+    /// Задает время для часов
+    /// </summary>
+    /// <param name="year"></param>
+    /// <param name="month"></param>
+    /// <param name="day"></param>
+    /// <param name="hourAngle"></param>
+    /// <param name="minuteAngle"></param>
+    /// <param name="secondAngle"></param>
+    /// <param name="dayNightDivision"></param>
     public void SetDateTime(int year, int month, int day, float hourAngle, float minuteAngle, float secondAngle, DayNightDivision dayNightDivision)
     {
         Year = year;
